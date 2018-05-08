@@ -11,7 +11,7 @@ public class Logic {
         int firstGood = 0;
         int[] counter = new int[t.length];
         for (int i = 0; i < t.length; i++) {
-            if (t[i] != 0) {
+            if (t[i] != 0 && t[i] != t.length) {
                 firstBad = (i - t[i]) + 1;
                 if (firstBad < 0) {
                     counter[firstBad + t.length]--;
