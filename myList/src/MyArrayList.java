@@ -36,7 +36,10 @@ public class MyArrayList<E> {
     void remove(int index) {
         int numMoved = size - index - 1;
         System.arraycopy(elementData, index + 1, elementData, index, numMoved);
-        elementData[--size] = null;
+        if (--size<0){
+            System.out.println("Size can't negative");
+        }
+        else  elementData[--size] = null;
     }
 
     public int indexOf(E value) {
@@ -44,7 +47,7 @@ public class MyArrayList<E> {
         for (int i = 0; i < capacity; i++) {
             if (elementData[i] == value) {
                 res = i;
-                System.out.println("Index is: " + res);
+              //  System.out.println("Index is: " + res);
             }
         }
         return res;
